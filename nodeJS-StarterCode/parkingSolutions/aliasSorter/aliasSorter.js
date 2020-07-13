@@ -2,7 +2,7 @@
 // Please download clipper.js from https://github.com/junmer/clipper-lib and save in the aliasSorter Respository
 
 const cityiq = require('../../cityiq.js')
-const ClipperLib = require('./clipper.js')
+const ClipperLib = require('./clipper.js.js.js')
 const fs = require('fs')
 
 const percentThreshold = 0.5 // overlap threshold - cityiq resolution is about half a vehicle
@@ -11,7 +11,7 @@ const endTime = new Date().getTime()
 const startTime = endTime - (24 * 60 * 60000)
 
 // myCredentials.js contains all the necessary credentials for reference
-const credentials = require("../../../../myCredentials.json")
+const credentials = require("../../../myCredentials.json")
 let ciq
 let state = {}
 

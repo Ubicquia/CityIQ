@@ -4,7 +4,7 @@ import json
 import argparse
 import time
 
-with open('../../myCredentials.json') as json_file:
+with open('../myCredentials.json') as json_file:
     credentials = json.load(json_file)
     zones = {
         "PKIN": credentials["id"] + "-IE-PARKING",
@@ -116,8 +116,6 @@ class CityIq(object):
 
     def fetchEvents(self, path, Uid, evType, startTime, endTime, pageNumber=0, pageSize=100):
         if self.token is not None:
-
-    
 
             # set the query
             query = {

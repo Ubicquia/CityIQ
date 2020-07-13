@@ -3,7 +3,7 @@ const cityiq = require('../../cityiq.js')
 
 
 // myCredentials.js contains all the necessary credentials for reference
-const credentials = require("../../../../myCredentials.json")
+const credentials = require("../../../myCredentials.json")
 
 let ciq
 

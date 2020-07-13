@@ -2,7 +2,7 @@ const fs = require('fs')
 const cityiq = require("./cityiq.js")
 
 // myCredentials.js contains all the necessary credentials for reference
-const credentials = require("../../myCredentials.json")
+const credentials = require("../myCredentials.json")
 
 // this function is where queries can be specified.  
 async function environmental() {
