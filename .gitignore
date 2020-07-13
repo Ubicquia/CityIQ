@@ -1,0 +1,5 @@
+credentials.json
+**/node_modules/
+**-test.json
+**/clipper.js
+**/*.csv
