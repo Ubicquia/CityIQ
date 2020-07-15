@@ -18,8 +18,7 @@ async function traffic() {
     console.log(assets[0]) // returns the first asset found
 
     // return all traffic events in last 12 hours related to the assetUid found above
-    let events = await ciq.events('1d873cf3-df13-4ddb-a83a-8f3297650c64', 'assetUid', 'TFEVT', (new Date()).getTime() - (1 * 60 * 6000))
-    // let events = await ciq.events(assets[0].assetUid,'assetUid','TFEVT',(new Date()).getTime() - (24 * 60 * 6000))
+    let events = await ciq.events(assets[0].assetUid,'assetUid','TFEVT',(new Date()).getTime() - (24 * 60 * 6000))
     
     console.log("writing all TRAFFIC events from the last 24 hours for asset: " + assets[0].assetUid)
     fs.writeFileSync('traffic-test.json', JSON.stringify(events, null, 2))
