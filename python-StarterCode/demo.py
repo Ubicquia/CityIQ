@@ -32,7 +32,7 @@ myCIQ.fetchEvents("assets", randAssetUid, "PKIN", startTime,
                   endTime, pageNumber=0, pageSize=1)
 assetEvents = myCIQ.getEvents()
 # printing events
-print(json.dumps(assetEvents, indent=4, sort_keys=True))
+print("Example Event: "+json.dumps(assetEvents[0], indent=4, sort_keys=True))
 # save a random locationUid for event querying to follow
 randLocationUid = assetEvents[0]["locationUid"]
 
@@ -40,7 +40,7 @@ print("-------------------------------------------")
 print("Get events for locationUid "+randLocationUid)
 # getting events
 myCIQ.fetchEvents("locations", randLocationUid, "PKIN",
-                  startTime, endTime, pageNumber=0, pageSize=1)
+                  startTime, endTime, pageNumber=0, pageSize=1000)
 locationEvents = myCIQ.getEvents()
 print(json.dumps(locationEvents, indent=4, sort_keys=True))
 
@@ -59,10 +59,10 @@ print("-------------------------------------------")
 print("Get events for assetUid "+randAssetUid)
 # getting events
 myCIQ.fetchEvents("assets", randAssetUid, "TFEVT", startTime,
-                  endTime, pageNumber=0, pageSize=1)
+                  endTime, pageNumber=0, pageSize=1000)
 assetEvents = myCIQ.getEvents()
 # printing events
-print(json.dumps(assetEvents, indent=4, sort_keys=True))
+print("Example Event: "+json.dumps(assetEvents[0], indent=4, sort_keys=True))
 
 
 print("====================================================================================")
@@ -80,10 +80,10 @@ print("-------------------------------------------")
 print("Get events for assetUid "+randAssetUid)
 # getting events
 myCIQ.fetchEvents("assets", randAssetUid, "PEDEVT",
-                  startTime, endTime, pageNumber=0, pageSize=1)
+                  startTime, endTime, pageNumber=0, pageSize=1000)
 assetEvents = myCIQ.getEvents()
 # printing events
-print(json.dumps(assetEvents, indent=4, sort_keys=True))
+print("Example Event: "+json.dumps(assetEvents[0], indent=4, sort_keys=True))
 
 
 print("====================================================================================")
@@ -101,10 +101,10 @@ print("-------------------------------------------")
 print("Get events for assetUid "+randAssetUid)
 # getting events
 myCIQ.fetchEvents("assets", randAssetUid, "TEMPERATURE",
-                  startTime, endTime, pageNumber=0, pageSize=1)
+                  startTime, endTime, pageNumber=0, pageSize=1000)
 assetEvents = myCIQ.getEvents()
 # printing events
-print(json.dumps(assetEvents, indent=4, sort_keys=True))
+print("Example Event: "+json.dumps(assetEvents[0], indent=4, sort_keys=True))
 
 print("====================================================================================")
 print("++++++++++Getting Bicycle Data++++++++++++")
@@ -121,7 +121,7 @@ print("-------------------------------------------")
 print("Get events for assetUid "+randAssetUid)
 # getting events
 myCIQ.fetchEvents("assets", randAssetUid, "BICYCLE",
-                  startTime, endTime, pageNumber=0, pageSize=1)
+                  startTime, endTime, pageNumber=0, pageSize=1000)
 assetEvents = myCIQ.getEvents()
 # printing events
-print(json.dumps(assetEvents, indent=4, sort_keys=True))
+print("Example Event: "+json.dumps(assetEvents[0], indent=4, sort_keys=True))

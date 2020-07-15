@@ -4,7 +4,7 @@ import json
 import argparse
 import time
 
-with open('../myCredentials.json') as json_file:
+with open('./myCredentials.json') as json_file:
     credentials = json.load(json_file)
     zones = {
         "PKIN": credentials["id"] + "-IE-PARKING",
@@ -112,15 +112,16 @@ class CityIq(object):
     # # evType is the eventType as a string i.e. "PKIN"
     # # startTime is time since epoch in milliseconds
     # # endtime is time since epoch in milliseconds
-    # # pageSize is the number of elements response is restricted to
+    # # pageLimit is the number of elements response is restricted to
+    # # pageOffset is the page you are asking for (default is 0 )
 
-    def fetchEvents(self, path, Uid, evType, startTime, endTime, pageNumber=0, pageSize=100):
+    def fetchEvents(self, path, Uid, evType, startTime, endTime, pageNumber=0, pageSize=1000):
         if self.token is not None:
 
             # set the query
             query = {
-                "pageSize": str(pageSize),
-                "pageNumber": str(pageNumber),
+                "pageLimit": str(pageSize),
+                "pageOffset": str(pageNumber),
                 "eventType": evType,
                 "startTime": startTime,
                 "endTime": endTime
@@ -131,14 +132,15 @@ class CityIq(object):
                 "GET", self.tenant["eventService"]+"/"+path+"/"+Uid+"/events", headers=headers, params=query)
             try:
                 # sets the content to events
-                self.events = response.json()["content"]
-                details = response.json()["metaData"]
+                self.res = response.json()
+                self.events = self.res["content"]
+                details = self.res["pagination"]
                 # informs on pageSize exceeded
-                if len(self.events) == int(pageSize):
+                if int(details["totalPages"]) > int(details["pageOffset"]):
                     print("There are a total of " +
                           str(details["totalRecords"])+" events in this timeframe")
-                    print("You are limiting your response to " +
-                          str(details["request_limit"])+" (pageSize)")
+                    print("You are can query for " +
+                          str(details["totalPages"] - 1)+" more pages of "+ str(details["pageLimit"])+" events each")
 
                 return response
             except Exception as e:

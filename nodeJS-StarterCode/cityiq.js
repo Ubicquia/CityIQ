@@ -152,10 +152,15 @@ module.exports = async function (tenant) {
 
     span = '&startTime=' + start + '&endTime=' + ((typeof (stop) == 'undefined') ? '9999999999999' : stop)
     headers = { authorization: 'Bearer ' + client_token, 'predix-zone-id': zones[type] }
-    queryURL = tenant.eventService + query + span + '&pageNumber=' + pageNumber + '&pageSize=' + pageSize
+    queryURL = tenant.eventService + query + span + '&pageOffset=' + pageNumber + '&pageLimit=' + pageSize
     console.log('Query URL: ' + queryURL)
 
     let response = (await request(queryURL, headers))
+    if (response) {
+      console.log("There are a total of " + response.pagination.totalRecords + " events in this timeframe")
+      console.log("You are can query for " + (response.pagination.totalPages - 1) + " more pages of " + response.pagination.pageLimit + " events each")
+
+    }
     return (response.content === undefined) ? response : response.content
   }
 

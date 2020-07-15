@@ -60,17 +60,6 @@
 							]
 						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic aWMuc3RhZ2Uuc2ltLmRldmVsb3A6ZGV2"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
-								"disabled": true
-							}
-						],
 						"url": {
 							"raw": "{{uaa}}/oauth/token?grant_type=client_credentials",
 							"host": [
@@ -417,7 +406,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{parking_asset}}/events?eventType=PKIN&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{parking_asset}}/events?eventType=PKIN&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -446,11 +435,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -488,7 +477,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/{{parking_loc}}/events?eventType=PKIN&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/{{parking_loc}}/events?eventType=PKIN&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -517,11 +506,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -559,7 +548,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/events?bbox={{bbox}}&locationType=PARKING_ZONE&eventType=PKIN&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/events?bbox={{bbox}}&locationType=PARKING_ZONE&eventType=PKIN&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -595,11 +584,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -637,7 +626,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{parking_asset}}/events?eventType=PKOUT&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{parking_asset}}/events?eventType=PKOUT&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -666,11 +655,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -708,7 +697,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/{{parking_loc}}/events?eventType=PKOUT&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/{{parking_loc}}/events?eventType=PKOUT&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -737,11 +726,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -779,7 +768,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/events?bbox={{bbox}}&locationType=PARKING_ZONE&eventType=PKOUT&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/events?bbox={{bbox}}&locationType=PARKING_ZONE&eventType=PKOUT&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -815,11 +804,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -864,7 +853,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/{{ped_loc}}/events?eventType=PEDEVT&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/{{ped_loc}}/events?eventType=PEDEVT&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -893,11 +882,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -935,7 +924,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{ped_asset}}/events?eventType=PEDEVT&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{ped_asset}}/events?eventType=PEDEVT&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -964,11 +953,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -990,7 +979,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/7ee2efda-129f-4268-80e9-532cf1330896/events?eventType=PEDEVT&startTime={{startts}}&endTime={{endts}}&pageSize=100",
+											"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/7ee2efda-129f-4268-80e9-532cf1330896/events?eventType=PEDEVT&startTime={{startts}}&endTime={{endts}}&pageLimit=100",
 											"protocol": "https",
 											"host": [
 												"{{tenant}}",
@@ -1019,7 +1008,7 @@
 													"value": "{{endts}}"
 												},
 												{
-													"key": "pageSize",
+													"key": "pageLimit",
 													"value": "100"
 												}
 											]
@@ -1173,7 +1162,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/events?eventType=PEDEVT&bbox={{bbox}}&locationType=WALKWAY&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/events?eventType=PEDEVT&bbox={{bbox}}&locationType=WALKWAY&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -1209,11 +1198,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -1258,7 +1247,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/events?eventType=TFEVT&bbox={{bbox}}&locationType=TRAFFIC_LANE&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/events?eventType=TFEVT&bbox={{bbox}}&locationType=TRAFFIC_LANE&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -1294,11 +1283,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -1336,7 +1325,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{traffic_asset}}/events?eventType=TFEVT&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{traffic_asset}}/events?eventType=TFEVT&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -1365,11 +1354,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -1407,7 +1396,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/{{traffic_loc}}/events?eventType=TFEVT&startTime=1591848000000&endTime=1592193600000&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/locations/{{traffic_loc}}/events?eventType=TFEVT&startTime=1591848000000&endTime=1592193600000&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -1436,11 +1425,11 @@
 											"value": "1592193600000"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -1485,7 +1474,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{env_asset}}/events?eventType=PRESSURE&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{env_asset}}/events?eventType=PRESSURE&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -1514,11 +1503,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -1556,7 +1545,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{em_asset}}/events?eventType=METROLOGY&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{em_asset}}/events?eventType=METROLOGY&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -1585,11 +1574,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -1627,7 +1616,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{env_asset}}/events?eventType=TEMPERATURE&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{env_asset}}/events?eventType=TEMPERATURE&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -1656,11 +1645,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -1698,7 +1687,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{env_asset}}/events?eventType=ORIENTATION&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{env_asset}}/events?eventType=ORIENTATION&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -1727,11 +1716,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -1769,7 +1758,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{em_asset}}/events?eventType=ENERGY_TIMESERIES&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{em_asset}}/events?eventType=ENERGY_TIMESERIES&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -1798,11 +1787,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -1840,7 +1829,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{env_asset}}/events?eventType=HUMIDITY&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{env_asset}}/events?eventType=HUMIDITY&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -1869,11 +1858,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]
@@ -1911,7 +1900,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{em_asset}}/events?eventType=ENERGY_ALERT&startTime={{startts}}&endTime={{endts}}&pageSize=100&pageNumber=0",
+									"raw": "https://{{tenant}}.cityiq.io/api/v2/event/assets/{{em_asset}}/events?eventType=ENERGY_ALERT&startTime={{startts}}&endTime={{endts}}&pageLimit=100&pageOffset=0",
 									"protocol": "https",
 									"host": [
 										"{{tenant}}",
@@ -1940,11 +1929,11 @@
 											"value": "{{endts}}"
 										},
 										{
-											"key": "pageSize",
+											"key": "pageLimit",
 											"value": "100"
 										},
 										{
-											"key": "pageNumber",
+											"key": "pageOffset",
 											"value": "0"
 										}
 									]

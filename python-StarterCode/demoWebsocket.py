@@ -6,7 +6,7 @@ import json
 # pip3 install websocket-client
 import websocket
 
-with open('../myCredentials.json') as json_file:
+with open('./myCredentials.json') as json_file:
     credentials = json.load(json_file)
 
 # # set the zone and websocket url

@@ -11,7 +11,7 @@
 // If you do not intend to use the Traffic API, please change the eventTypes and headers for the approrpiate API.
 
 // myCredentials.js contains all the necessary credentials for reference
-const credentials = require("../myCredentials.json")
+const credentials = require("./myCredentials.json")
 
 const fetch = require('node-fetch')
 const WebSocket = require('ws')
